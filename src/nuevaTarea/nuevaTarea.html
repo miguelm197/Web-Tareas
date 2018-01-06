@@ -1,0 +1,81 @@
+<div class="cont-home">
+    <div class="container">
+        <h2>Nueva Tarea</h2>
+        <br>
+        <br>
+        <br>
+        <div class="nuevaTarea-panel">
+
+            <form class="form" name="form">
+                <!-- RESUMEN -->
+                <div class="form-group">
+                    <label class="control-label">Resumen*</label>
+                    <input type="text" class="form-control" name="res" placeholder="Resumen" ng-model="nuevaTarea.resumen" required>
+                </div>
+                <!-- DESCRIPCIÓN -->
+                <div class="form-group">
+                    <label lass="control-label">Descripción*</label>
+                    <textarea class="form-control resizableVertical" name="des" placeholder="Descripción" ng-model="nuevaTarea.descripcion" rows="3"
+                        required></textarea>
+                </div>
+
+                <!-- RESPONSABLE -->
+                <div class="form-group">
+                    <label class="control-label">Responsable*</label>
+                    <div class="dropdown combo">
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            {{usuarioSeleccionado}}
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li ng-repeat="usuario in listaUsuarios" ng-click="seleccionado(usuario)">
+                                <span>{{usuario.nombre + " " + usuario.apellido}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- TIPO DE INCIDENTE -->
+                <div class="form-group">
+                    <label class="control-label">Tipo*</label>
+                    <div class="dropdown combo">
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            {{tipoTicket}}
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <!-- ---------------------- -->
+                            <li ng-click="tipoTicket = 'Tarea'">
+                                <span>Tarea</span>
+                            </li>
+                            <li ng-click="tipoTicket = 'Error'">
+                                <span>Error</span>
+                            </li>
+                            <li ng-click="tipoTicket = 'Mejora'">
+                                <span>Mejora</span>
+                            </li>
+                            <li ng-click="tipoTicket = 'Nueva funcionalidad'">
+                                <span>Nueva Funcionalidad</span>
+                            </li>
+                            <!-- ---------------------- -->
+                        </ul>
+                    </div>
+                </div>
+                <br>
+                <br>
+
+                <!-- AGREGAR TAREA -->
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" ng-model="crearOtraTarea"> Crear otra tarea
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-default form-control" ng-disabled="form.res.$error.required || form.des.$error.required"
+                        ng-click="agregarTarea()">Agregar tarea</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

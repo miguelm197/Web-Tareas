@@ -1,0 +1,96 @@
+<!-- <style>
+    ul {
+        width: 1000px;
+        height: 600px;
+    }
+
+    li {
+        display: inline-block;
+    }
+
+    .slide1 {
+        background-image: url('http://lorempixel.com/1000/600/people');
+
+    }
+
+    .slide2 {
+        background-image: url('http://lorempixel.com/1000/600/');
+
+    }
+</style>
+<div class="cont-home">
+
+    <div class="container">
+        <div class="carousel">
+            <ul rn-carousel="" rn-carousel-index="3" rn-carousel-auto-slide="3" class="carousel5 ng-scope">
+                <li class="slide1" style="transform: translate3d(-500%, 0px, 0px); ">Slide 1</li>
+                <li class="slide2" style="transform: translate3d(-400%, 0px, 0px); ">Slide 2</li>
+            </ul>
+        </div>
+    </div>
+</div> -->
+
+
+
+<div class="cont-home">
+    <div class="container-fluid">
+        <div class="col col-md-4">
+            <h2>Home</h2>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col col-md-12">
+
+                    <div class="row">
+                        <div class="panel panel-default panel-btn" ng-click="nuevaTarea()">
+                            <div class="panel-body">
+                                <a href="/#!/nuevaTarea" class="menu-btn">
+                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                    <span> Nueva Tarea</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="panel panel-default  panel-btn" ng-click="listaTareas()">
+                            <div class="panel-body">
+                                <a href="/#!/listaTareas" class="menu-btn">
+                                    <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                                    <span> Lista de tarea</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="panel panel-default panel-btn" ng-click="perfil()">
+                            <div class="panel-body">
+                                <a href="/#!/perfil" class="menu-btn">
+                                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                    <span> Mi perfil</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div ng-controller="listaTareasCtrl" dir-swipe>
+            </div>
+        </div>
+
+        <div class="col col-md-8" ng-controller="listaTareasCtrl">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div dir-lista-tareas></div>
+        </div>
+    </div>
+</div>

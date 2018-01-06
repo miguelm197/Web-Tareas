@@ -1,0 +1,45 @@
+.divisor{
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+}
+.registro{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+.registro .fondo{
+    position: fixed;
+    padding: 0px;
+    margin: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(41, 85, 150);
+    z-index: 101;
+ }
+ .registro .registro-panel{
+     position: relative;
+    margin: 0px auto;
+    width: 25%;
+    z-index: 102;
+}
+
+.registro .registro-panel h2{
+    color: white;    
+    text-align: center;
+    margin-bottom: 50px;
+}
+.registro .registro-panel > a{
+    color: white;
+}    
+
+
+
+
+.registro .registro-panel .jumbotron{
+padding-left: 20px;
+padding-right: 20px;
+}
+

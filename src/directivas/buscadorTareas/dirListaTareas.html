@@ -1,0 +1,44 @@
+<table class="mf-table">
+    <thead>
+        <tr>
+            <th>
+                <span>Clave</span>
+            </th>
+            <th>
+                <span>Estado</span>
+            </th>
+            <th>
+                <span>Resumen</span>
+            </th>
+
+            <th>
+                <span>Creada</span>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="tarea in datos.datos">
+            <td class="col2p">
+                <span>{{tarea.id}}</span>
+            </td>
+            <td class="col15p">
+                <span>{{tarea.estado}}</span>
+            </td>
+            <td class="col60p">
+                <a href="{{tarea.enlace()}}">{{tarea.resumen}}</span>
+            </td>
+
+            <td class="col10p">
+                <span>{{tarea.creada}}</span>
+            </td>
+    </tbody>
+    <tfoot>
+        <tr class="paginacion">
+            <td>
+                <span>1</span>
+                <span> - </span>
+                <span>{{datos.datos.length}}</span>
+            </td>
+        </tr>
+    </tfoot>
+</table>

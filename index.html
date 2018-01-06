@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="myApp">
+
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10 </title>
+    <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <!-- <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css.map"> -->
+    <link rel="stylesheet" type="text/css" href="./node_modules/alertifyjs/build/css/alertify.min.css">
+    <link rel="stylesheet" type="text/css" href="./node_modules/alertifyjs/build/css/themes/default.min.css">
+    <link rel="stylesheet" type="text/css" href="./node_modules/angular-ui-grid/ui-grid.min.css">
+    <link rel="stylesheet" href="node_modules/angular-bootstrap-datetimepicker/src/css/datetimepicker.css" />
+
+    <link rel="stylesheet" type="text/css" href="./src/estilos/style.css">
+
+
+    <script src="./node_modules/angular/angular.js"></script>
+    <script src="./node_modules/angular-route/angular-route.js"></script>
+    <script src="./node_modules/angular-cookies/angular-cookies.min.js"></script>
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="./node_modules/alertifyjs/build/alertify.min.js"></script>
+    <script src="./node_modules/angular-ui-grid/ui-grid.min.js"></script>
+    <script src="./node_modules/angular-md5/angular-md5.js"></script>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/angular-bootstrap-datetimepicker/src/css/datetimepicker.css" />
+
+    <script type="text/javascript" src="node_modules/moment/moment.js"></script>
+    <script type="text/javascript" src="node_modules/angular-bootstrap-datetimepicker/src/js/datetimepicker.js"></script>
+    <script type="text/javascript" src="node_modules/angular-bootstrap-datetimepicker/src/js/datetimepicker.templates.js"></script>
+
+
+
+    <script src="./node_modules/angular-carousel/dist/angular-carousel.js"></script>
+    <script src="./node_modules/angular-touch/angular-touch.js"></script>
+    <link rel="stylesheet" href="node_modules/angular-carousel/dist/angular-carousel.css" />
+
+
+
+
+    <script src="./src/app.js"></script>
+    <script src="./src/js/js.js"></script>
+
+
+    <!-- directivas -->
+    <script src="./src/directivas/botonAtras/botonAtras.js"></script>
+    <script src="./src/directivas/listaTareas/dirListaTareas.js"></script>
+    <script src="./src/directivas/swipe/swipe.js"></script>
+    <link rel="stylesheet" type="text/css" href="./src/directivas/swipe/swipe.css">
+
+
+    <link rel="stylesheet" href="./src/directivas/listaTareas/dirListaTareas.css" />
+
+
+    <link rel="stylesheet" type="text/css" href="./src/nav/nav.css">
+    <script src="./src/nav/navCtrl.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./src/registro/registro.css">
+    <script src="./src/registro/registroCtrl.js"></script>
+    <script src="./src/registro/registroFact.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./src/login/login.css">
+    <script src="./src/login/loginCtrl.js"></script>
+    <script src="./src/login/loginFact.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./src/nuevaTarea/nuevaTarea.css">
+    <script src="./src/nuevaTarea/nuevaTareaCtrl.js"></script>
+    <script src="./src/nuevaTarea/tareasFact.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./src/listaTareas/listaTareas.css">
+    <script src="./src/listaTareas/listaTareasCtrl.js"></script>
+    <script src="./src/listaTareas/listaTareasFact.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./src/tarea/tarea.css">
+    <script src="./src/tarea/tareaCtrl.js"></script>
+    <script src="./src/tarea/tareaFact.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./src/perfil/perfil.css">
+    <script src="./src/perfil/perfilCtrl.js"></script>
+    <script src="./src/perfil/perfilFact.js"></script>
+
+
+    <script src="./src/home/homeCtrl.js"></script>
+
+
+</head>
+
+<body>
+
+    <div ng-include src="'src/nav/nav.html'"></div>
+    <!-- VISTAS PARCIALES-->
+    <div ng-view></div>
+
+
+
+
+</body>
+
+</html>

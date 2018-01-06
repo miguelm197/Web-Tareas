@@ -1,0 +1,53 @@
+<div class="container login">
+    <div class="fondo"></div>
+    <div class="login-panel">
+
+        <h2>Inicio de sesión</h2>
+
+        <div class="jumbotron">
+            <div class="container">
+
+                <form class="form" name="form">
+
+                    <!-- CORREO -->
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"> @ </span>
+                            <input type="email" class="form-control" id="cor" placeholder="Correo" name="correo" ng-model="usuario.correo" required>
+                        </div>
+                    </div>
+                    <!-- CONTRASEÑA -->
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span>
+                            </span>
+                            <input type="password" class="form-control" id="clU" placeholder="Clave" name="clave" ng-model="usuario.clave" required>
+                        </div>
+                    </div>
+
+                    <!-- RECUERDAME -->
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Recuérdame
+                            </label>
+                        </div>
+                    </div>
+
+                    <br>
+                    <br>
+                    <!-- REGISTRARSE -->
+                    <div class="form-group">
+                        <button type="submit" ng-disabled="form.nombre.$error.required || form.clave.$error.required" class=" btn btn-default form-control"
+                            ng-click="login(form.correo, form.clave) ">Iniciar sesión</button>
+                        <a href="#">¿No recuerdas tu contraseña?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <a href="#!registro">¿No tienes una cuenta?</a>
+        
+    </div>
+
+</div>

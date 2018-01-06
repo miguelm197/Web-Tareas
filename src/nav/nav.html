@@ -1,0 +1,88 @@
+<div class="conteiner menu-lateral" ng-controller="navCtrl">
+
+    <!-- BOTONES DE ARRIBA 
+         *********************************  -->
+    <div class="arriba">
+        <a href="/#!/home" class="menu-btn logo">
+            <span class="glyphicon glyphicon-check" aria-hidden="true"> </span>
+        </a>
+        <a href="/#!/nuevaTarea" class="menu-btn">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"> </span>
+        </a>
+    </div>
+
+    <!-- BOTONES DE ABAJO 
+         *********************************  -->
+    <div class="abajo">
+
+        <!-- MENÚ -->
+        <div class="btn-group dropup">
+            <button type="button" class=" menu-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li>
+                    <span class="menu-title">MENÚ</span>
+                    <div class="separador"></div>
+                </li>
+                <li>
+                    <a href="/#!/nuevaTarea">Nueva Tarea</a>
+                </li>
+                <li>
+                    <a href="/#!/listaTareas">Lista de Tareas</a>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <!-- AYUDA -->
+        <div class="btn-group dropup">
+            <button type="button" class=" menu-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li>
+                    <span class="menu-title">AYUDA</span>
+                    <div class="separador"></div>
+                </li>
+                <li>
+                    <a href="#">Léeme</a>
+                </li>
+                <li>
+                    <a href="#">Reportar error</a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/miguel-merelli-6931a6106/">Miguel Merelli</a>
+                </li>
+            </ul>
+        </div>
+
+
+        <!-- MI PERFIL -->
+        <div class="btn-group dropup">
+            <button type="button" class=" menu-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li>
+                    <!-- <span class="menu-title">MI PERFIL</span> -->
+                    <span class="menu-title">{{sesion.nombre}}</span>
+                    <H6 class="menu-title">{{sesion.rol}}</H6>
+                    <div class="separador"></div>
+                </li>
+                <li>
+                    <a href="/#!/perfil">Perfil</a>
+                </li>
+                <li>
+                    <a href="#">Preferencias</a>
+                </li>
+                <li>
+                    <a href="#" ng-click="cerrarSesion()">Salir</a>
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+</div>

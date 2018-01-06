@@ -1,0 +1,39 @@
+.mf-table{
+/*  background-color: rgba(128, 128, 128, 0.096);*/
+    width: 100%;
+}  
+.mf-table thead{
+    border-bottom: 1px solid gray;
+}
+.mf-table thead th{
+        padding: 10px 30px;
+        font-size: 14px;
+        color:#808080e6;
+}  
+.mf-table tbody td{
+padding:10px 30px;
+}
+.mf-table tbody tr:hover{
+        transition: all .3s;
+}
+.mf-table tbody tr:hover{
+    background-color: #8080801a;
+    transition: all .3s;
+}
+
+.mf-table tfoot{
+    border-top: 1px solid gray;
+}
+.mf-table tfoot td{
+    padding:10px 30px;  
+}
+
+    
+    .mf-table .col2p{width: 2%}
+    .mf-table .col5p{width: 5%}
+    .mf-table .col10p{width: 10%}
+    .mf-table .col15p{width: 15%}
+    .mf-table .col20+{width: 20%}
+    .mf-table .col25p{width: 25%}
+    .mf-table .col30p{width: 30%}
+    .mf-table .col35p{width: 35%}

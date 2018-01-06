@@ -1,0 +1,106 @@
+<div class="cont-home">
+    <div class="container">
+
+        <div class="row">
+            <h2>{{usuario.nombre + " " + usuario.apellido}}</h2>
+            <h4>{{usuario.correo}}</h4>
+        </div>
+
+        <!-- botones -->
+        <div class="row">
+            <div class="row botones">
+                <button ng-hide="editar" class="btn" ng-click="editar = true; emparejar()">Editar</button>
+                <button ng-show="editar" class="btn" ng-click="editar = false">Cancelar Edición</button>
+                <button class="btn" ng-click="reestablecerPwd = true">Reestablecer contraseña</button>
+            </div>
+        </div>
+
+        <!-- editar usuario -->
+        <div ng-show="editar" class="row">
+            <br>
+            <form class="form" name="form">
+                <!-- NOMBRE -->
+                <div class="form-group">
+                    <label for="nom" class="control-label">Nombre</label>
+                    <input type="text" class="form-control" id="nom" placeholder="Nombre" name="nombre" ng-model="usuarioEditado.nombre" required>
+                </div>
+                <!-- APELLIDO -->
+                <div class="form-group">
+                    <label for="ape" class="control-label">Apellido</label>
+                    <input type="text" class="form-control" id="ape" placeholder="Apellido" name="apellido" ng-model="usuarioEditado.apellido"
+                        required>
+                </div>
+
+                <!-- CORREO -->
+                <div class="form-group">
+                    <label for="cor" class="control-label">Correo</label>
+                    <div class="input-group">
+                        <span class="input-group-addon"> @ </span>
+                        <input type="email" class="form-control" id="cor" placeholder="Correo" name="correo" ng-model="usuarioEditado.correo" required>
+                    </div>
+                </div>
+
+                <!-- BOTONES -->
+                <div class="form-group">
+                    <div class="col col-md-3">
+                        <button type="button" class="btn btn-default form-control" ng-click="editar = false">Cancelar</button>
+                    </div>
+                    <div class="col col-md-3">
+                        <button ng-disabled="form.nombre.$error.required || form.apellido.$error.required || form.correo.$error.required" class=" btn btn-primary form-control"
+                            ng-click="editarUsuario()">Guardar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <br>
+        <br>
+        <!-- Reestablecer contraseña -->
+        <div ng-show="reestablecerPwd" class="row">
+            <br>
+            <form class="form" name="form">
+
+                <!-- PARA QUE EL NAVEGADOR DETECTE EL USUARIO AL QUE SE LE CAMBIA LA CONTRASEÑA -->
+                <div class="input-group" ng-show="false">
+                    <span class="input-group-addon"> @ </span>
+                    <input type="email" class="form-control" id="cor" placeholder="Correo" name="correo" ng-model="usuarioEditado.correo">
+                </div>
+
+                <!-- CONTRASEÑA -->
+                <div class="form-group">
+                    <label for="clU" class="control-label">Contraseña</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span>
+                        </span>
+
+                        <input type="password" class="form-control" id="clU" placeholder="Clave" name="claveU" ng-model="usuarioEditado.claveUno"
+                            required>
+                    </div>
+                </div>
+                <!-- CONFIRMACION DE CONTRASEÑA -->
+                <div class="form-group">
+                    <label for="clD" class="control-label">Confirmar contraseña</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span>
+                        </span>
+                        <input type="password" class="form-control" id="clD" placeholder="Confirmar clave" name="claveD" ng-model="usuarioEditado.claveDos"
+                            required>
+                    </div>
+                </div>
+
+                <!-- BOTONES -->
+                <div class="form-group">
+                    <div class="col col-md-3">
+                        <button class=" btn btn-default form-control" ng-click="reestablecerPwd = false">Cancelar</button>
+                    </div>
+                    <div class="col col-md-3">
+                        <button ng-disabled="form.claveU.$error.required || form.claveD.$error.required " class=" btn btn-primary form-control" ng-click="editarPwd()">Guardar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+</div>

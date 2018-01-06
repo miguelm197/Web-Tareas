@@ -1,0 +1,74 @@
+<div class="container registro">
+    <div class="fondo"></div>
+    <div class="registro-panel">
+
+        <h2>Nuevo usuario</h2>
+
+        <div class="jumbotron">
+            <div class="container">
+
+                <form class="form" name="form">
+                    <!-- NOMBRE -->
+                    <div class="form-group">
+                        <label for="nom" class="control-label">Nombre</label>
+                        <input type="text" class="form-control" id="nom" placeholder="Nombre" name="nombre" ng-model="usuario.nombre" required>
+                    </div>
+                    <!-- APELLIDO -->
+                    <div class="form-group">
+                        <label for="ape" class="control-label">Apellido</label>
+                        <input type="text" class="form-control" id="ape" placeholder="Apellido" name="apellido" ng-model="usuario.apellido" required>
+                    </div>
+
+                    <div class=" divisor">--- o ---</div>
+                    <!-- CORREO -->
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"> @ </span>
+                            <input type="email" class="form-control" id="cor" placeholder="Correo" name="correo" ng-model="usuario.correo" required>
+                        </div>
+                    </div>
+                    <!-- CONTRASEÑA -->
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span>
+                            </span>
+                            <input type="password" class="form-control" id="clU" placeholder="Clave" name="clave" ng-model="usuario.claveUno" required>
+                        </div>
+                    </div>
+                    <!-- CONFIRMACION DE CONTRASEÑA -->
+                    <div class="form-group">
+                        <!-- <label for="clD" class="control-label">Confirmar clave</label> -->
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span>
+                            </span>
+                            <input type="password" class="form-control" id="clD" placeholder="Confirmar clave" ng-model="usuario.claveDos" required>
+                        </div>
+                    </div>
+                    <!-- RECUERDAME -->
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Recuérdame
+                            </label>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <!-- REGISTRARSE -->
+                    <div class="form-group">
+                        <button type="submit" ng-disabled="form.nombre.$error.required || form.apellido.$error.required || form.correo.$error.required || form.clave.$error.required"
+                            class=" btn btn-default form-control" ng-click="registrarse()">Registrarse</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <a href="#!login">¿Ya tienes una cuenta?</a>
+    </div>
+
+</div>

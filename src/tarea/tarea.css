@@ -1,0 +1,80 @@
+.cont-home .container .row{
+    width: 80%;
+}
+
+.cont-home .container .botones{
+    margin-top: 20px;
+}
+
+.cont-home .container .informacion{
+    margin-top: 40px;
+}
+
+.cont-home .container .descripcion{
+    margin-top: 40px;
+}
+.cont-home .container .comentarios a{
+    cursor: pointer;
+}
+
+.cont-home .container .comentarios{
+    margin-top: 40px;
+    width: 70%;
+}
+
+.cont-home .container .comentarios .contenedorComentario{
+    position: reelative;
+}
+
+.cont-home .container .comentarios .nuevoComentario{
+    bottom: 10px;
+}
+
+.cont-home .container .comentarios .nuevoComentario textarea{
+    height: 200px;
+    resize: vertical;
+}
+
+.cont-home .container .comentarios .nuevoComentario button{
+ float: right;
+ width: 200px;
+}
+
+.cont-home .container .comentarios .panel-heading{
+  position: relative;
+}
+
+.cont-home .container .comentarios .panel-heading .derecha{
+    position: absolute;
+    right:  0px;
+    top: 0px;
+}
+.cont-home .container .comentarios .panel-body .fecha{
+    float: right;
+}
+
+.tarea-panel .combo{
+    width: 100%;
+}
+
+.tarea-panel .combo button{
+    width: 100%;
+    text-align: left;
+}
+.tarea-panel .combo button span{
+    position: absolute;
+    right: 10px;
+    top: 15px;
+}
+.tarea-panel .combo ul{
+    width: 100%;
+    text-align: left;
+}
+.tarea-panel .combo ul li{
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.tarea-panel .combo ul li:hover{
+    background-color: rgba(0, 0, 0, 0.082);
+}
+

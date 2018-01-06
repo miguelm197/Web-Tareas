@@ -1,0 +1,41 @@
+.panel-listaTareas{
+
+}
+.panel-listaTareas table{
+  /*  background-color: rgba(128, 128, 128, 0.096);*/
+    width: 100%;
+}  
+.panel-listaTareas table thead{
+    border-bottom: 1px solid gray;
+}
+.panel-listaTareas table thead th{
+    padding: 10px 30px;
+    font-size: 14px;
+    color:#808080e6;
+}  
+.panel-listaTareas table tbody td{
+    padding:10px 30px;
+}
+.panel-listaTareas table tbody tr:hover{
+    transition: all .3s;
+}
+.panel-listaTareas table tbody tr:hover{
+    background-color: #8080801a;
+    transition: all .3s;
+}
+
+.panel-listaTareas table tfoot{
+    border-top: 1px solid gray;
+}
+.panel-listaTareas table tfoot td{
+    padding:10px 30px;
+}
+
+
+.panel-listaTareas .col5p{width: 5%}
+.panel-listaTareas .col10p{width: 10%}
+.panel-listaTareas .col15p{width: 15%}
+.panel-listaTareas .col20+{width: 20%}
+.panel-listaTareas .col25p{width: 25%}
+.panel-listaTareas .col30p{width: 30%}
+.panel-listaTareas .col35p{width: 35%}

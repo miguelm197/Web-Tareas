@@ -1,0 +1,9 @@
+<ul class="listaSwipe">
+    <li ng-repeat="tarea in datos.datos">
+        <div class="swipe">
+
+            <div class="tab" ng-swipe-left="izquierda(tarea)" ng-style="tarea.color" ng-swipe-right="derecha(tarea)"></div>
+
+        </div>
+    </li>
+</ul>

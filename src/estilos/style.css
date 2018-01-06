@@ -1,0 +1,30 @@
+.cont-home{
+    position: fixed;
+    left: 50px;
+    width: calc(100% - 50px);
+    height: 100%;
+    overflow: auto;
+    z-index: 0;
+}
+.resizableVertical {
+    resize: vertical;
+    overflow: auto;
+}
+a{
+    cursor: pointer;
+}
+.panel-btn{
+    cursor: pointer;
+    transition:all 1s;
+}
+.panel-btn:hover{
+    cursor: pointer;
+    background-color: rgb(247, 247, 247);
+    transition:all .5s;
+}
+.separador{
+    border-bottom: 1px solid gray;
+    margin: 5px 0px;
+    margin-top: -5px;
+    margin-left: -10px;
+}

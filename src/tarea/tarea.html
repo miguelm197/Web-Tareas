@@ -1,0 +1,266 @@
+<div class="cont-home">
+    <div class="tarea-panel">
+
+        <div class="container">
+
+
+            <div class="row titulo">
+                <div class="col col-md-8">
+
+                    <div ng-hide="tarea.editar">
+                        <h2>{{tarea.resumen}}</h2>
+                    </div>
+
+
+                    <div ng-show="tarea.editar">
+                        <br>
+                        <div class="form-group">
+                            <input type="text" class="form-control" ng-model="tareaEditada.resumen">
+                        </div>
+
+                    </div>
+                    <h4>ID-{{tarea.id}}</h4>
+
+                </div>
+                <div class="col col-md-4">
+                    <br>
+                    <a href="/#!/listaTareas" class="enlace">Volver a la lista de tareas</a>
+                </div>
+            </div>
+
+
+            <div class="row botones">
+                <button ng-show="tarea.estado!='Cerrada' && tarea.estado!='Resuelta'" class="btn" ng-click="resolverTarea()">Resolver</button>
+                <button class="btn" ng-click="tarea.editar = true; emparejarEditado()">Editar</button>
+                <button ng-show="tarea.estado!='Cerrada' && tarea.estado!='En progreso'  && tarea.estado!='Resuelta'" class="btn" ng-click="iniciarTarea()">Iniciar progreso</button>
+                <button ng-show="tarea.estado!='Cerrada' && tarea.estado=='En progreso'" class="btn" ng-click="pararTarea()">Parar progreso</button>
+                <button ng-hide="tarea.estado=='Cerrada'" class="btn" ng-click="cerrarTarea()">Cerrar</button>
+                <button ng-show="tarea.estado=='Cerrada'" class="btn" ng-click="reAbrirTarea()">Re abrir</button>
+            </div>
+
+
+
+
+            <div class="row informacion">
+
+                <!-- estado -->
+                <div class="col col-md-3">
+
+                    <div ng-hide="tarea.editar">
+                        <span>Estado: </span>
+                        <span>{{tarea.estado}}</span>
+                    </div>
+
+
+                    <!-- ========== EDITAR ESTADO =========== -->
+                    <div ng-show="tarea.editar">
+                        <span>Estado: </span>
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                {{tareaEditada.estado}}
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li>
+                                    <a href="" ng-click="tareaEditada.estado = 'Abierta'">Abierta</a>
+                                </li>
+                                <li>
+                                    <a href="" ng-click="tareaEditada.estado = 'Cerrada'">Cerrada</a>
+                                </li>
+                                <li>
+                                    <a href="" ng-click="tareaEditada.estado = 'En progreso'">En progreso</a>
+                                </li>
+                                <li>
+                                    <a href="" ng-click="tareaEditada.estado = 'Sin resolver'">Sin resolver</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- ======================================== -->
+
+                </div>
+
+                <!-- creada -->
+                <div class="col col-md-3">
+                    <span>Creada: {{tarea.fechaCreado}}</span>
+                </div>
+
+                <!-- encargado -->
+                <div class="col col-md-3">
+
+                    <div ng-hide="tarea.editar">
+                        <span>Encargado: {{tarea.usuarioEncargado}}</span>
+                    </div>
+
+                    <!-- ========== EDITAR ENCARGADO =========== -->
+                    <div ng-show="tarea.editar">
+                        <span>Encargado: </span>
+                        <div class="dropdown combo">
+                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                {{tareaEditada.usuarioSeleccionado}}
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li ng-repeat="usuario in listaUsuarios" ng-click="seleccionado(usuario)">
+                                    <span>{{usuario.nombre + " " + usuario.apellido}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- ======================================== -->
+
+                </div>
+
+                <!-- tipo -->
+                <div class="col col-md-3">
+
+                    <div ng-hide="tarea.editar">
+                        <span>Tipo: {{tarea.tipo}}</span>
+                    </div>
+
+                    <!-- ========== EDITAR TIPO =========== -->
+                    <div ng-show="tarea.editar">
+                        <span>Tipo: </span>
+                        <div class="dropdown combo">
+                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                {{tareaEditada.tipo}}
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                <!-- ---------------------- -->
+                                <li ng-click="tareaEditada.tipo = 'Tarea'">
+                                    <span>Tarea</span>
+                                </li>
+                                <li ng-click="tareaEditada.tipo = 'Error'">
+                                    <span>Error</span>
+                                </li>
+                                <li ng-click="tareaEditada.tipo = 'Mejora'">
+                                    <span>Mejora</span>
+                                </li>
+                                <li ng-click="tareaEditada.tipo = 'z'">
+                                    <span> Funcionalidad</span>
+                                </li>
+                                <!-- ---------------------- -->
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- ======================================== -->
+
+                </div>
+
+            </div>
+
+
+            <div class="row">
+                <div class="col col-md-12">
+
+
+
+
+                    <div class="row descripcion">
+                        <h5>Descripción:</h5>
+
+                        <div ng-hide="tarea.editar">
+                            <span>{{tarea.descripcion}}</span>
+                        </div>
+
+                        <!-- ========== EDITAR DESCRIPCION =========== -->
+                        <div ng-show="tarea.editar">
+                            <textarea class="form-control" ng-model="tareaEditada.descripcion"></textarea>
+                        </div>
+                        <!-- ======================================== -->
+
+                        <br>
+                        <div ng-show="tarea.editar">
+                            <button class="btn pull-right" ng-click="tarea.editar = false">Cancelar</button>
+                            <button class="btn btn-primary pull-right" ng-click="tarea.editar = false; guardarTarea()">Guardar</button>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="row comentarios">
+                        <h5>Comentarios</h5>
+                        <div class="panel panel-default" ng-show="sinComentario">
+                            <div class="panel-body">
+                                Sin comentarios
+                            </div>
+                        </div>
+
+
+                        <div class="panel panel-default" ng-repeat="comentario in tarea.comentarios">
+
+                            <div class="panel-heading" ng-mouseover="comentario.visible = true" ng-mouseleave="comentario.visible = false">
+                                <div class="izquierda">
+                                    <span class="glyphicon glyphicon-user" aria-hidden="true"> </span>
+                                    <a>{{comentario.usuario}}</a>
+                                </div>
+                                <div ng-show="comentario.visible" class="derecha">
+                                    <span class="btn glyphicon glyphicon-pencil" ng-click="comentario.editar = true; tarea.comEnEdicion = true; comentarioEditado.comentario = comentario.comentario"
+                                        ng-hide="tarea.comEnEdicion" aria-hidden="true"></span>
+                                    <span class="btn glyphicon glyphicon-trash" ng-click="comentario.editar = false; tarea.comEnEdicion = false;eliminarComentario(comentario)"
+                                        aria-hidden="true"></span>
+                                </div>
+
+                            </div>
+                            <div class="panel-body">
+                                <div ng-hide="comentario.editar">
+                                    <span>{{comentario.comentario}}</span>
+                                </div>
+                                <!-- ========== EDITAR COMENTARIO =========== -->
+                                <div ng-show="comentario.editar">
+                                    <textarea class="form-control" ng-model="comentarioEditado.comentario"></textarea>
+                                    <br>
+                                    <button class="btn pull-right" ng-click="comentario.editar = false; tarea.comEnEdicion = false">Cancelar</button>
+                                    <button class="btn btn-primary pull-right" ng-click="editarComentario(comentario)">Guardar</button>
+                                </div>
+                                <!-- ======================================== -->
+                                <!-- ========== MOSTRAR COMENTARIO ========== -->
+                                <span class="fecha" ng-hide="comentario.editar">
+                                    <br>
+                                    <br> {{comentario.fecha}} - {{comentario.hora}}
+                                </span>
+                                <!-- ======================================== -->
+                            </div>
+                        </div>
+
+                        <div class="contenedorComentario">
+                            <div class="nuevoComentario">
+                                <h5>Escribe un comentario</h5>
+                                <textarea class="form-control" ng-model="comentarioNuevo"></textarea>
+                                <br>
+                                <button class="btn btn-primary" ng-click="agregarComentario()">Enviar</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <!-- <div class="dropdown">
+                <div class="dropdown">
+                    <a class="dropdown-toggle fechaInput date " role="button" data-toggle="dropdown">
+                            <div class="input-group">
+                                <input type="text" class="form-control" data-ng-model="data.dateDropDownInput">
+                                <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-calendar"></i>
+                                </span>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <datetimepicker data-ng-model="data.dateDropDownInput" data-datetimepicker-config="{ dropdownSelector: '#dropdown2',startView:'day', 
+                            minView:'day', modelType: 'MM-DD-YYYY'}" />
+                        </ul>
+                    </div>
+                </div> -->
