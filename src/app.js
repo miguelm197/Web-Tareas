@@ -50,11 +50,9 @@ app.config(function ($routeProvider, $locationProvider) {
 
 //Autenticacaion
 app.run(['$rootScope', '$location', '$cookies', '$http', function ($rootScope, $location, $cookies, $http) {
+    var urlServices = "https://api-cifx2.herokuapp.com";
 
-    var urlServices = "http://localhost";
-    var portServices = 3000;
-
-    app.config['urlServicios'] = urlServices + ":" + portServices;
+    app.config['urlServicios'] = urlServices;
 
     // mantenerse logueado luego de resfrescar la pagina
     $rootScope.globals = $cookies.getObject('globals') || false;//Obtengo los valore de las cookies si hay
