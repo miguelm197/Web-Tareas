@@ -21,8 +21,7 @@
  }
  .login .login-panel{
      position: relative;
-    margin: 0px auto;
-    width: 25%;
+
     z-index: 102;
 }
 

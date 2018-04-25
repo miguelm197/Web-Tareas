@@ -3,9 +3,9 @@ app.controller("nuevaTareaCtrl", ["$scope", "$location", "FacTareas", "FacLogin"
     $scope.usuarioSeleccionado = "Usuario";
     $scope.listaUsuarios = [];
 
-
     FacTareas.consultaUsuarios().then(function (data) {
         data = data.data;
+        console.log(data)
         for (var u = 0; u < data.length; u++) {
             var usuario = {
                 id: data[u].id,

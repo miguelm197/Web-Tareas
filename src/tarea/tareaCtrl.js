@@ -49,13 +49,13 @@ app.controller("tareaCtrl", ["$scope", "$location", "$rootScope", "FacTarea", "F
     }
 
     $scope.agregarComentario = function () {
+        console.log($rootScope.$root.$root.globals.currentUser)
         var correo = $rootScope.$root.$root.globals.currentUser.correo;
-        FacTarea.obtenerUsuarioPorCorreo(correo).then(function (res) {
-
+        var idUser = $rootScope.$root.$root.globals.currentUser.id;
             var comentario = {
+                idTarea: $scope.tarea.id,
+                idUsuario: idUser,
                 comentario: $scope.comentarioNuevo,
-                fecha: formatoFecha(new Date()),
-                hora: formatoHora(new Date())
             }
 
             var nombre = res.data[0].nombre;
@@ -73,7 +73,6 @@ app.controller("tareaCtrl", ["$scope", "$location", "$rootScope", "FacTarea", "F
                     $scope.editar = false;
                 }
             )
-        });
     };
 
     $scope.eliminarComentario = function (comentario) {

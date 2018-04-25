@@ -6,6 +6,8 @@ app.factory("FacRegistro", ["$http", function ($http) {
             return $http.post(servicio + "/usuarios", objeto);
         },
         existenciaCorreo: function (correo) {
+            var a = $http.get(servicio + "/usuarios/?correo=" + correo);
+            console.log(a)
             return $http.get(servicio + "/usuarios/?correo=" + correo);
         }
     }

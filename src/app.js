@@ -50,7 +50,9 @@ app.config(function ($routeProvider, $locationProvider) {
 
 //Autenticacaion
 app.run(['$rootScope', '$location', '$cookies', '$http', function ($rootScope, $location, $cookies, $http) {
-    var urlServices = "https://api-cifx2.herokuapp.com";
+    // var urlServices = "https://api-cifx2.herokuapp.com";
+    var urlServices = "http://localhost:3000";
+// 
 
     app.config['urlServicios'] = urlServices;
 
@@ -62,7 +64,7 @@ app.run(['$rootScope', '$location', '$cookies', '$http', function ($rootScope, $
 
 
     if ($rootScope.globals) {
-        $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
+        // $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
 
         //Verifica la primera vez que arranca la pag
         // if ($rootScope.globals.currentUser.rolUsuario == "admin") {
